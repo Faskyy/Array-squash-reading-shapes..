@@ -1,0 +1,40 @@
+public class TestShapes {
+    public static void main(String[] args) {
+        Shape c = new Circle(1/(Math.PI));
+        Shape r = new Rectangle(6, 8);
+        Shape t = new Triangle(1,2);
+        Shape s = new Square(2.1);
+        Shape[] shapes = new Shape[4];
+        shapes[0] = c; shapes[1] = r; shapes[2] = t; shapes[3] = s;
+
+        // DEFINE AN INDEX i TO POINT TO THE ARRAY OF SHAPES shapes[]
+        int i = 0;
+       
+        System.out.print("\n------------------------------------------------------------------------");
+        for (Shape shape : shapes) {
+            double area = shape.computeArea();
+            String name = ((NamedShape) shape).getShapeName();
+
+            System.out.printf("\nThe name of the shape is " + name + " and it has the following attributes: \n");
+           
+            // YOUR CODE HERE. MAKE SURE YOUR OUTPUT MATCHES *EXACTLY* THE OUTPUT SHOWN IN THE INSTRUCTIONS.
+            
+            switch(i) {
+            case 0:
+            System.out.println("radius " + shapes[i].computeArea() + " area " + shapes[i].computeArea());
+            break;
+            case 1:
+            System.out.println("height " + shapes[i].getHeight() + " width " + shapes[i].getWidth() + " area " + shapes[i].computeArea());
+            break;
+            case 2:
+            System.out.println("base " + shapes[i].getWidth() + " height " + shapes[i].getHeight() + " area " + shapes[i].computeArea());
+            break;
+            case 3:
+            System.out.println("side " + shapes[i].getWidth() + " area " + shapes[i].computeArea());
+            break;
+            }
+            ++i;
+        }
+        System.out.println("------------------------------------------------------------------------");
+    }
+}
